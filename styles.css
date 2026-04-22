@@ -1,11 +1,11 @@
 /* Final site — dark cinematic editorial */
 
 :root {
-  --ink: #0a0908;
-  --ink-2: #141210;
-  --ink-3: #1f1c18;
-  --line: #2a2622;
-  --line-2: #3a3630;
+  --ink: #000000;
+  --ink-2: #0a0a0a;
+  --ink-3: #141414;
+  --line: #1f1f1f;
+  --line-2: #2b2b2b;
   --paper: #f4f1ea;
   --paper-dim: #a8a39a;
   --paper-faint: #6b665e;
@@ -13,6 +13,10 @@
   --amber-bright: #ff8a3d;
   --hot: #ff4a00;
   --density: 1;
+  --radius-lg: 24px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,7 +54,7 @@ html, body {
   padding: 20px 40px;
   display: flex; justify-content: space-between; align-items: center;
   backdrop-filter: blur(12px);
-  background: linear-gradient(to bottom, rgba(10,9,8,0.7) 0%, rgba(10,9,8,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
   transition: background 0.3s;
 }
 .nav-logo {
@@ -96,13 +100,14 @@ html, body {
   text-decoration: none;
   transition: all 0.25s;
   display: inline-flex; align-items: center; gap: 8px;
+  border-radius: 999px;
 }
 .nav-cta:hover { background: var(--paper); color: var(--ink); }
 .nav-cta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--hot); display: inline-block; animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1 } 50% { opacity: 0.4 } }
 
 /* mobile hamburger */
-.nav-burger { display: none; width: 36px; height: 36px; border: 1px solid var(--line-2); align-items: center; justify-content: center; flex-direction: column; gap: 4px; background: transparent; cursor: pointer; }
+.nav-burger { display: none; width: 36px; height: 36px; border: 1px solid var(--line-2); align-items: center; justify-content: center; flex-direction: column; gap: 4px; background: transparent; cursor: pointer; border-radius: var(--radius-sm); }
 .nav-burger span { width: 16px; height: 1px; background: var(--paper); }
 
 /* ─── HERO (split layout) ─────────────────────────────── */
@@ -198,13 +203,14 @@ html, body {
   border: 1px solid var(--line);
   overflow: hidden;
   background: var(--ink-2) url('hero.jpg') center/cover no-repeat;
+  border-radius: var(--radius-lg);
 }
 .hero-reel::before {
   content: '';
   position: absolute; inset: 0;
   background:
-    linear-gradient(to top, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 45%),
-    linear-gradient(to bottom, rgba(10,9,8,0.3) 0%, rgba(10,9,8,0) 30%);
+    linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%),
+    linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 30%);
   pointer-events: none;
   z-index: 1;
 }
@@ -282,7 +288,7 @@ html, body {
   padding: 8px 18px;
   border-radius: 999px;
   border: 1px solid var(--paper-dim);
-  background: rgba(10,9,8,0.6);
+  background: rgba(0,0,0,0.6);
   backdrop-filter: blur(8px);
   font-family: 'Geist Mono', monospace;
   font-size: 10px;
@@ -352,7 +358,7 @@ section { position: relative; }
   position: relative;
   transition: padding 0.4s ease, background 0.4s ease;
 }
-.work-item:hover { padding-left: 16px; padding-right: 16px; background: var(--ink-2); }
+.work-item:hover { padding-left: 16px; padding-right: 16px; background: var(--ink-2); border-radius: var(--radius-md); }
 .work-item .w-num {
   font-family: 'Geist Mono', monospace;
   font-size: 11px;
@@ -411,6 +417,7 @@ section { position: relative; }
   text-decoration: none;
   color: inherit;
   display: block;
+  border-radius: var(--radius-md);
 }
 .work-item .w-thumb.has-cover {
   background-size: cover;
@@ -420,7 +427,7 @@ section { position: relative; }
 .work-item .w-thumb.has-cover::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 45%);
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%);
   pointer-events: none;
 }
 a.w-thumb-link { cursor: pointer; }
@@ -455,7 +462,7 @@ a.w-thumb-link:focus-visible { outline: 2px solid var(--amber); outline-offset: 
   text-transform: uppercase;
   background: var(--hot);
   padding: 3px 7px;
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }
 .w-thumb .w-tl {
   position: absolute; top: 10px; left: 10px;
@@ -504,6 +511,7 @@ a.w-thumb-link:focus-visible { outline: 2px solid var(--amber); outline-offset: 
     repeating-linear-gradient(-45deg, transparent 0 14px, rgba(212,165,116,0.04) 14px 15px);
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
 }
 .about-portrait.has-photo { background-image: none; }
 .about-portrait img {
@@ -797,6 +805,7 @@ a.w-thumb-link:focus-visible { outline: 2px solid var(--amber); outline-offset: 
   font-family: 'Geist Mono', monospace;
   font-size: 14px;
   cursor: pointer;
+  border-radius: var(--radius-sm);
 }
 .drawer-logo {
   font-family: 'Fraunces', serif;
