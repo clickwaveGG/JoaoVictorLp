@@ -205,7 +205,7 @@
     // Data
     const WORKS = [
       { n: '01', title: 'Campanha Verão', em: '2026', client: 'Clickwave × Marca A', tags: ['comercial','full campaign'], year: '2026', dur: '01:20', tl: 'TC 00:00:00' },
-      { n: '02', title: 'Reel Lançamento', em: '', client: 'Marca B · social', tags: ['reel','vertical'], year: '2026', dur: '00:30', tl: 'TC 01:12:04' },
+      { n: '02', title: 'Reel Lançamento', em: '', client: 'Marca B · social', tags: ['reel','vertical'], year: '2026', dur: '00:30', tl: 'TC 01:12:04', cover: 'reel-02.jpg', url: 'https://www.instagram.com/reel/DWZjhhTj3l5/' },
       { n: '03', title: 'Spot Televisivo', em: '', client: 'Agência C', tags: ['comercial','TV'], year: '2025', dur: '00:45', tl: 'TC 02:44:21' },
       { n: '04', title: 'Série de Reels', em: '8 peças', client: 'Marca D', tags: ['reel','série'], year: '2025', dur: '00:15 ×8', tl: 'TC 03:08:00' },
       { n: '05', title: 'Mini-Documentário', em: 'bastidores', client: 'Projeto autoral', tags: ['doc','autoral'], year: '2025', dur: '03:10', tl: 'TC 04:40:12' },
@@ -237,10 +237,13 @@
             ${w.tags.map(t => `<span class="tag">${t}</span>`).join('')}
           </div>
         </div>
-        <div class="w-thumb">
+        ${w.url ? `<a class="w-thumb w-thumb-link${w.cover ? ' has-cover' : ''}" href="${w.url}" target="_blank" rel="noopener" aria-label="Abrir ${w.title} no Instagram"${w.cover ? ` style="background-image:url('${w.cover}')"` : ''}>
           <span class="w-reel-tag">REEL · 9:16</span>
           <span class="w-dur">${w.dur}</span>
-        </div>
+        </a>` : `<div class="w-thumb${w.cover ? ' has-cover' : ''}"${w.cover ? ` style="background-image:url('${w.cover}')"` : ''}>
+          <span class="w-reel-tag">REEL · 9:16</span>
+          <span class="w-dur">${w.dur}</span>
+        </div>`}
       </article>
     `).join('') + `
       <div class="works-footer">

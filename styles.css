@@ -391,14 +391,31 @@ section { position: relative; }
 .work-item .w-thumb {
   position: relative;
   border: 1px solid var(--line);
-  background: var(--ink-2);
+  background-color: var(--ink-2);
   background-image: repeating-linear-gradient(-45deg, transparent 0 12px, rgba(255,107,26,0.06) 12px 13px);
   overflow: hidden;
   aspect-ratio: 9 / 16;
   width: 180px;
   justify-self: end;
   transition: transform 0.4s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
+.work-item .w-thumb.has-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.work-item .w-thumb.has-cover::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,9,8,0.55) 0%, rgba(10,9,8,0) 45%);
+  pointer-events: none;
+}
+a.w-thumb-link { cursor: pointer; }
+a.w-thumb-link:hover { transform: scale(1.02); }
+a.w-thumb-link:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
 .work-item:hover .w-thumb { transform: scale(1.02); }
 .work-item .w-thumb::after {
   content: '';
