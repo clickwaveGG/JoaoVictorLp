@@ -600,6 +600,7 @@ a.w-thumb-link:focus-visible { outline: 2px solid var(--amber); outline-offset: 
 }
 .client:hover { background: var(--ink-2); }
 .client:nth-child(4n) { border-right: none; }
+.client:last-child { border-right: none; }
 .client .c-num {
   font-family: 'Geist Mono', monospace;
   font-size: 10px;
