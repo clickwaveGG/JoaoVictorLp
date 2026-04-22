@@ -374,6 +374,16 @@ section { position: relative; }
 }
 .work-item:hover .w-title { color: var(--amber); }
 .work-item .w-title em { font-style: italic; }
+.work-item .w-brand {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(16px, 1.6vw, 20px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--amber);
+  margin-top: 6px;
+}
 .work-item .w-meta {
   display: flex; gap: 14px; flex-wrap: wrap;
   font-family: 'Geist Mono', monospace;
@@ -381,7 +391,7 @@ section { position: relative; }
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--paper-dim);
-  margin-top: 6px;
+  margin-top: 10px;
 }
 .work-item .w-meta .tag {
   padding: 3px 8px;
