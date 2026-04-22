@@ -206,9 +206,9 @@
       { n: '01', title: 'Campanha Verão', em: '2026', brand: 'Acquaville', client: 'Acquaville · comercial', tags: ['comercial','full campaign'], year: '2026', dur: '01:20', tl: 'TC 00:00:00', cover: 'reel-01.jpg', url: 'https://www.instagram.com/reel/DWbjOWCEfuT/' },
       { n: '02', title: 'Reel Lançamento', em: '', brand: 'Larastore', client: 'Larastore · social', tags: ['reel','vertical'], year: '2026', dur: '00:30', tl: 'TC 01:12:04', cover: 'reel-02.jpg', url: 'https://www.instagram.com/reel/DWZjhhTj3l5/' },
       { n: '03', title: 'Spot Televisivo', em: '', brand: 'Real Calçados', client: 'Real Calçados · comercial', tags: ['comercial','TV'], year: '2025', dur: '00:45', tl: 'TC 02:44:21', cover: 'reel-03.jpg', url: 'https://www.instagram.com/reel/DV3f_7NDZeV/' },
-      { n: '04', title: 'Série de Reels', em: '8 peças', brand: 'Sheila · Corretora de Imóveis', client: 'Sheila · imóveis', tags: ['reel','série'], year: '2025', dur: '00:15 ×8', tl: 'TC 03:08:00', cover: 'reel-04.jpg', url: 'https://www.instagram.com/reel/DWWGGbIAFep/' },
-      { n: '05', title: 'Mini-Documentário', em: 'bastidores', brand: 'Vivi Closet', client: 'Vivi Closet · social', tags: ['doc','autoral'], year: '2025', dur: '03:10', tl: 'TC 04:40:12', cover: 'reel-05.jpg', url: 'https://www.instagram.com/reel/DVOmYpFEbFB/' },
-      { n: '06', title: 'Comercial Digital', em: '', brand: 'Essenzzia', client: 'Essenzzia · digital', tags: ['digital','branded'], year: '2024', dur: '01:00', tl: 'TC 05:20:00', cover: 'reel-06.jpg', url: 'https://www.instagram.com/reel/DVqs8h8jRI5/' },
+      { n: '04', title: 'Reel Institucional', em: '', brand: 'Sheila · Corretora de Imóveis', client: 'Sheila · imóveis', tags: ['reel','institucional'], year: '2025', cover: 'reel-04.jpg', url: 'https://www.instagram.com/reel/DWWGGbIAFep/' },
+      { n: '05', title: 'Reel de Marca', em: '', brand: 'Vivi Closet', client: 'Vivi Closet · social', tags: ['reel','social'], year: '2025', cover: 'reel-05.jpg', url: 'https://www.instagram.com/reel/DVOmYpFEbFB/' },
+      { n: '06', title: 'Reel de Marca', em: '', brand: 'Essenzzia', client: 'Essenzzia · digital', tags: ['reel','digital'], year: '2024', cover: 'reel-06.jpg', url: 'https://www.instagram.com/reel/DVqs8h8jRI5/' },
     ];
 
     const CLIENTS = [
@@ -239,10 +239,8 @@
         </div>
         ${w.url ? `<a class="w-thumb w-thumb-link${w.cover ? ' has-cover' : ''}" href="${w.url}" target="_blank" rel="noopener" aria-label="Abrir ${w.title} no Instagram"${w.cover ? ` style="background-image:url('${w.cover}')"` : ''}>
           <span class="w-reel-tag">REEL · 9:16</span>
-          <span class="w-dur">${w.dur}</span>
         </a>` : `<div class="w-thumb${w.cover ? ' has-cover' : ''}"${w.cover ? ` style="background-image:url('${w.cover}')"` : ''}>
           <span class="w-reel-tag">REEL · 9:16</span>
-          <span class="w-dur">${w.dur}</span>
         </div>`}
       </article>
     `).join('') + `
